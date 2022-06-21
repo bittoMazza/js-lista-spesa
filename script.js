@@ -1,9 +1,11 @@
-const shoppingList = ['cipolle','maionese','pizza','pasta','uova','cipolle','maionese','pizza','pasta','uova'];
+const shoppingList = ['cipolle','maionese','pizza','pasta','uova','melanzane','salame','mortadella'];
+let newAddItem;
+let newItem;
 
 const shopListContainer = document.getElementById('shopping-list')
 let i = 0;
 while( i < shoppingList.length ){
-    let newItem = document.createElement('li');
+    newItem = document.createElement('li');
     newItem.innerHTML = shoppingList[i];
     shopListContainer.append(newItem); 
     
@@ -11,3 +13,12 @@ while( i < shoppingList.length ){
 }
 
 console.log(shopListContainer)
+
+const btnAdd = document.getElementById('add-item')
+btnAdd.addEventListener('click',function(){
+    newAddItem = document.getElementById('new-add-item').value;
+    newItem = document.createElement('li');
+    newItem.innerHTML = newAddItem;
+    shoppingList.push(newAddItem);
+    shopListContainer.append(newItem);    
+})
