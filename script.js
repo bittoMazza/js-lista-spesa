@@ -17,8 +17,14 @@ console.log(shopListContainer)
 const btnAdd = document.getElementById('add-item')
 btnAdd.addEventListener('click',function(){
     newAddItem = document.getElementById('new-add-item').value;
-    newItem = document.createElement('li');
-    newItem.innerHTML = newAddItem;
-    shoppingList.push(newAddItem);
-    shopListContainer.append(newItem);    
+    if( newAddItem == ""){
+        alert('Inserire nome prodotto')
+    }
+    else{
+        newItem = document.createElement('li');
+        newItem.innerHTML = newAddItem;
+        shoppingList.push(newAddItem);
+        shopListContainer.append(newItem);   
+    }
+     
 })
